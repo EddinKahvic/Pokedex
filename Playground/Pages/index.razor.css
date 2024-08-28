@@ -1,0 +1,69 @@
+﻿body {
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 2fr);
+    grid-template-rows: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+    .grid-item:hover {
+        outline: 1px solid black;
+        z-index: 2;
+    }
+
+    .grid-item img {
+        width: 100px;
+        height: 100px;
+    }
+
+@keyframes upAndDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+        .grid-item:hover img {
+            animation: upAndDown 1s steps(1, end) infinite;
+        }
+
+    .grid-item .name {
+        display: block;
+        font-family: Montserrat, sans-serif;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .grid-item .id {
+        display: block;
+        font-family: Montserrat, sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        color: #666;
+        margin-top: 5px;
+    }
+
+.pokeball {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}

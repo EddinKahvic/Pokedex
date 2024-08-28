@@ -1,0 +1,29 @@
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+@using Fluxor
+@using Playground.Models
+@using Playground.Stores.Pokemon
+@inject IState<PokemonState> PokemonState
+@inject IDispatcher Dispatcher
+@page "/"
+
+@if (@PokemonState.Value.IsLoading)
+{
+    <div class="pokeball">
+        <img src="/assets/pokeball.gif" alt="Pokeball" />
+    </div>
+}
+else
+{
+    <div class="grid-wrapper">
+        @foreach (var pokemon in PokemonState.Value.PokemonList)
+        {
+            <div class="grid-item">
+                <span class="id" alt="Id">@pokemon.Id</span>
+                <span class="name" alt="Name">@pokemon.Name</span>
+                <img src=@pokemon.Sprite alt="Image" />
+            </div>
+        }
+    </div>
+}
+
+
